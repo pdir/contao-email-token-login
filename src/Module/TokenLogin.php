@@ -117,7 +117,8 @@ class TokenLogin extends AbstractFrontendModuleController
                     ->setParameter(1, strtotime('+2 hours'))
                     ->setParameter(2, $member->id)
                     ->setParameter(3, $token)
-                    ->setParameter(4, '/' . ltrim($request->request->get('_target_path'), '/'))
+                    // ->setParameter(4, '/' . ltrim($request->request->get('_target_path'), '/'))
+                    ->setParameter(4, $request->request->get('_target_path'))
                     ->executeStatement()
                 ;
 
